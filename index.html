@@ -5,6 +5,19 @@
 <title>💖</title>
 
 <style>
+#openLetter{
+    padding:12px 24px;
+    border-radius:12px;
+}
+
+#letter{
+    display:none;
+    background:rgba(255,255,255,0.1);
+    padding:20px;
+    border-radius:15px;
+    color:white;
+} 
+    
 body {
     margin: 0;
     overflow: hidden;
@@ -60,6 +73,34 @@ canvas {
 <div class="text">I miss you cami 💖</div>
 
 <canvas id="canvas"></canvas>
+
+    <button id="openLetter">✉️ Открой письмо</button>
+
+<div id="letter">
+    <h2>Для тебя 💖</h2>
+    <p>
+        Кареглазая девушка с тёплым взглядом,
+В котором осень смешалась с янтарным закатом.
+В её глазах — как в кофе с густым шоколадом —
+Можно забыться и стать чуть счастливей внезапно.
+        В тебе есть привычка смотреть чуть глубже,
+Чем позволяют чужие слова.
+И будто бы мир перед этим безоружен —
+Он честно сдаётся, едва ты права.
+        Ты — тёплый оттенок последнего света,
+Что падает мягко на крышу домов.
+И в тебе остаётся немного лета,
+Даже когда уже нет облаков.
+        Карие глаза — будто лес после ливня,
+Где свет пробивается сквозь облака.
+И если смотреть в них чуть дольше, наивно,
+То можно поверить в любовь на века.
+        И если кто спросит, где счастье бывает,
+Я просто скажу, не придумывая причин:
+Оно иногда в тишине обитает
+И носит твой взгляд среди будничных зим.
+        
+    </p>
 
 <script>
 
@@ -134,6 +175,20 @@ window.addEventListener("resize", () => {
 });
 
 </script>
+<script>
+const button = document.getElementById("openLetter");
+const letter = document.getElementById("letter");
 
+button.addEventListener("click", () => {
+
+    if(letter.style.display === "block"){
+        letter.style.display = "none";
+    } else {
+        letter.style.display = "block";
+    }
+
+});
+</script>
+    
 </body>
 </html>
