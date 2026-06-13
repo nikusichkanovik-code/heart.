@@ -4,20 +4,44 @@
 <meta charset="UTF-8">
 <title>💖</title>
 
-<style>
-#openLetter{
-    padding:12px 24px;
-    border-radius:12px;
+<style> 
+
+        /* КОНВЕРТ */
+.envelope {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 60px;
+    cursor: pointer;
+    z-index: 20;
 }
 
-#letter{
-    display:none;
-    background:rgba(255,255,255,0.1);
-    padding:20px;
-    border-radius:15px;
-    color:white;
-} 
-    
+/* ПИСЬМО */
+.letter {
+    display: none;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 70%;
+    max-width: 600px;
+
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(8px);
+
+    border-radius: 20px;
+    padding: 25px;
+
+    color: white;
+    text-align: center;
+
+    z-index: 30;
+}
+        
 body {
     margin: 0;
     overflow: hidden;
@@ -72,11 +96,11 @@ canvas {
 
 <div class="text">I miss you cami 💖</div>
 
-<canvas id="canvas"></canvas>
+<div class="envelope" id="envelope">
+📩
+</div>
 
-    <button id="openLetter">✉️ Открой письмо</button>
-
-<div id="letter">
+<div class="letter" id="letter">
     <h2>Для тебя 💖</h2>
     <p>
         Кареглазая девушка с тёплым взглядом,
@@ -101,6 +125,8 @@ canvas {
 И носит твой взгляд среди будничных зим.
         
     </p>
+</div>
+    <canvas id="canvas"></canvas>
 
 <script>
 
@@ -174,21 +200,25 @@ window.addEventListener("resize", () => {
     canvas.height = window.innerHeight;
 });
 
-</script>
-<script>
-const button = document.getElementById("openLetter");
+// ===== КОНВЕРТ =====
+
+const envelope = document.getElementById("envelope");
 const letter = document.getElementById("letter");
 
-button.addEventListener("click", () => {
+envelope.addEventListener("click", () => {
 
-    if(letter.style.display === "block"){
+    if (letter.style.display === "block") {
         letter.style.display = "none";
+        envelope.innerHTML = "📩";
     } else {
         letter.style.display = "block";
+        envelope.innerHTML = "💌";
     }
 
-});
+}); 
+    
 </script>
+
     
 </body>
 </html>
